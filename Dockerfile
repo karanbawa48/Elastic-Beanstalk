@@ -1,9 +1,16 @@
-FROM python:2.7
+FROM ubuntu:20.04
 
-# Add sample application
-ADD application.py /tmp/application.py
+ENV CONTAINER_TIMEZONE="Europe/Brussels"
+RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONTAINER_TIMEZONE > /etc/timezone
 
-EXPOSE 8000
+RUN apt update && apt install -y apache2
 
-# Run it
-ENTRYPOINT ["python", "/tmp/application.py"]
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
+ENV APACHE_RUN_DIR /var/www/html
+
+RUN echo 'Hello, karan' > /var/www/index.html
+
+ENTRYPOINT ["/usr/sbin/apache2"]
+CMD ["-D", "FOREGROUND"]
