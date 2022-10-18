@@ -1,4 +1,10 @@
-﻿# What is Elastic Beanstalk
+﻿ - [What is Elastic Beanstalk](https://github.com/karanbawa48/Elastic-Beanstalk#what-is-elastic-beanstalk)
+ - [Deploy a docker container by Elastic Beanstalk with CI/CD.](https://github.com/karanbawa48/Elastic-Beanstalk#deploy-a-docker-container-by-elastic-beanstalk-with-cicd)
+ - [Create  AWS code pipeline](https://github.com/karanbawa48/Elastic-Beanstalk#step-2--create--aws-code-pipeline)
+ - [Create a connection with Github](https://github.com/karanbawa48/Elastic-Beanstalk#create-a-connection-with-github-by-clicking-on-connect-with-github)
+ -  [Blue Green Deployment](https://github.com/karanbawa48/Elastic-Beanstalk#blue-green-deployment)
+
+# What is Elastic Beanstalk
 Elastic Beanstalk is a service for deploying and scaling web applications and services. Upload your code and Elastic Beanstalk automatically handles the deployment—from capacity provisioning, load balancing, and auto scaling to application health monitoring.
 
 ## Deploy a docker container by Elastic Beanstalk with CI/CD.
@@ -110,13 +116,21 @@ A blue/green deployment is a deployment strategy in which you create two separat
 The New Application will start deploying.  if you source code is working. The Application will deployed.
 
 **![](https://lh6.googleusercontent.com/1a39vGbRy8jM1m5cTOsQS-L7cDbOpVRWBPqe4GMLXcGppnz4InyGZ-HxiOBRLbHVN1xfJo0-o4mU8vs0zhDmRTtAlaBFHvmh4McZfsEbEKAdmEcF4H7H-09rH5ZADMjPKNtTk2ihkmzrO40JpEjUW4TvV4OAX1rVQcH4urCmqHncm6G9TzXL9ktBag)**
+
+
 If the health new env is ok, It mean you have successfully deployed you new version of application. 
 Test the new version on the new environment. 
+
+
 **![](https://lh6.googleusercontent.com/_tGIhCEQdLT_GHNnhZH0eOhiTf_MjudUuUYkx8a9OWPZtHgQq70fxmosNrBcMuqUyYQ9-qGg2H6zaN9VLs4JTCbnt0KUJCdQt2uCHOyT1MOObBSTYKyTReEmLiRTRG6L3ws1q1qHuoi1B0DyoOdquQaeUPib_SiPzzvEO-14J_FolcrXpXlgtVLw8A)**
+
 Now, here comes the Blue/green deployments in the picture.
 - On the environment overview page, choose  **Environment actions**, and then choose  **Swap environment URLs**.
+
 **![](https://lh5.googleusercontent.com/R2VcddtCfG2E8mmF1O_q3X85MB4g0vmyEODTc1MGyPu-7xsm4QqdI2z3d4_mCc5XRMd4T3baa9eMJXJbIc8LjzEpSEUdr7toSsaCDYE7AH250cJFGvHmgpiZm7H9wTuquiqlf9cdvzO79xs7dbV-E_YvKNwgnnfzOC3JQpNqBWucUqvyzHSevrQCAQ)**
+
 - Click on **swap**
+
 **![](https://lh6.googleusercontent.com/i-PqJjyFZeED1pPcjJovCSc_VxWe6j4Gj-J5pFTSVvdx_faomvnsWnzkqZk2o3ZsxWCqg0hQZHki0s5PsweO7ltjO7ojNZ9jdqQZ7SOofHyGX2v59lnuS2ehQl3QFSTs3lOJUCnzknBlII-DXr5gYxbsJGbfeSAiKD1Qo9YtyY7ZCvqXGWrG76CeMw)**
 
 Elastic Beanstalk swaps the CNAME records of the old and new environments, redirecting traffic from the old version to the new version.
