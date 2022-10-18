@@ -7,7 +7,7 @@
 # What is Elastic Beanstalk
 Elastic Beanstalk is a service for deploying and scaling web applications and services. Upload your code and Elastic Beanstalk automatically handles the deployment—from capacity provisioning, load balancing, and auto scaling to application health monitoring.
 
-## Deploy a docker container by Elastic Beanstalk with CI/CD.
+## Deploy a Containerized Application by Elastic Beanstalk with CI/CD.
 In this tutorial we will deploy a **Docker container** by **Elastic Beanstalk**. we will use **Github** as a source code repo and AWS pipeline for **CI/CD**. 
 ## **Prerequisite**
 
@@ -42,7 +42,8 @@ In this tutorial we will deploy a **Docker container** by **Elastic Beanstalk**.
  - **Now  Add source stage**.
 - here you will chose from where you want to take you source code. We are using **GitHub Version2**
 
-- ![](https://lh5.googleusercontent.com/LEdslmLiaT5KPMI6glbyvfyL8t_PxoUYyQd36uriCcLzvm77h8OSEKNfxj5u5zFTfssB8gk8mLZjcYeS_Mlt7yTufKhrX2UzXlXFtuVKmICrJ8u7xZ-yiqVegZUy5FmYPVYLul26yuC6YZzTUgsADS8VDwR9TbuMVAl8hTqnoRhGYQ96YHKpMRxJMw)**
+
+![](https://lh5.googleusercontent.com/LEdslmLiaT5KPMI6glbyvfyL8t_PxoUYyQd36uriCcLzvm77h8OSEKNfxj5u5zFTfssB8gk8mLZjcYeS_Mlt7yTufKhrX2UzXlXFtuVKmICrJ8u7xZ-yiqVegZUy5FmYPVYLul26yuC6YZzTUgsADS8VDwR9TbuMVAl8hTqnoRhGYQ96YHKpMRxJMw)**
 ## Create a connection with Github by clicking on **connect with Github**. 
 - A pop window will open as shown in the image below. Enter any name for connection. click on *Connect to GitHub*
 - Create a GitHub app 
@@ -56,7 +57,8 @@ In this tutorial we will deploy a **Docker container** by **Elastic Beanstalk**.
 - Now your App will be created and Click on **connect**.
 	   The pop up window will auto close and looks like :
 
-  **![](https://lh4.googleusercontent.com/kYaAM-dd6a02mjauHgQzLPBPjkSJ-62DFudrE4umOMUWH6WyAciJ116h6MfggQ777fXw8hTZB2kKGUY6XIzRXwgDtu34hpHFbCShWbeIl_p0zHkAg5W2chm9rTivD7lUUI84-P7ZBOTWoUW7igNQldw2woVsILzttIsgnTEEHLdmQTUg92S4zabP_A)**
+**![](https://lh4.googleusercontent.com/kYaAM-dd6a02mjauHgQzLPBPjkSJ-62DFudrE4umOMUWH6WyAciJ116h6MfggQ777fXw8hTZB2kKGUY6XIzRXwgDtu34hpHFbCShWbeIl_p0zHkAg5W2chm9rTivD7lUUI84-P7ZBOTWoUW7igNQldw2woVsILzttIsgnTEEHLdmQTUg92S4zabP_A)**
+
  - Select the Repo and Branch.
 - Click on **Next**.
 - **Spike the build part**
@@ -65,7 +67,7 @@ In this tutorial we will deploy a **Docker container** by **Elastic Beanstalk**.
   **![](https://lh3.googleusercontent.com/IQcjBIB3X1hQDyWMQcfFJgJE73lUclFB5ECVrNZIkmyuE4V2p_tjsgtvvCrWdwdCxkZGqt05rvGYsTDV1C-Mi3vTDZSJeBfxh1dzJIgZ7Bd-9ZqEtp2PEPJCwXwjiACJmar8RkuRlHXTaz2jtdZPM9Q9YskAwIbKvPAHXV0_wu16pHWh9ysEpwO8Hg)**
 
  - Here select Elastic Beanstalk as Deployment provider.
- - select region, where you EB application is running.
+ - select region, where your EB application is running.
 - select **application** in **Application name**.	
 -  select **Environment** in **Environment name**. and click on Next.
 - Review your Pipeline. if all good, click on create pipeline.
@@ -87,8 +89,10 @@ A blue/green deployment is a deployment strategy in which you create two separat
 
 **![](https://lh6.googleusercontent.com/ewnwVJs77fLlSInhRu2NizxLWEfucaTtyzMkEDaBJsZ-br8Sov0fiD2D3Behjrx4xupY74Xl75WVTK1fPiEBTvvzenl2BGsIdyUB_oiHCJikuszpomFlN_zi_WWwNzn97R12ifQxr4zW4GvlMtGNlp8JoVyWLeWKcn3Wst9xq5sQKHKPXK6TVVEz-g)**
 
+
 - You can Change the Name of your new env (cloned env).
 - Click on **clone**.
+
 
 **![](https://lh3.googleusercontent.com/mpBhhAQonLjcGdaqMx4DVfKtJUsQ4ERRw6luWx2SHLtD-bFr_ZvTnRggnKWmmmcyCmFORBMr4miAm2kVIjAAVnSEoqWEZRxlj351hYATkAZZqYUnB-dRIktE0Hmxo2GC_Z7_Dp7mq3bbnJYqrYQrcMccxL-e0qrfP22FOMrS-YLP5V_J_5BSFUi0kA)**
 
