@@ -55,5 +55,46 @@ In this tutorial we will deploy a **Docker container** by **Elastic Beanstalk**.
 	   The pipeline will be created and will start deploying your application
 	  
 	# Blue Green Deployment
+## what is Blue Green deployment?
+A blue/green deployment is a deployment strategy in which you create two separate, but identical environments. One environment (**blue**) is running the **current application** version and one environment (**green**) is running the **new application version**. Using a blue/green deployment strategy increases application availability and reduces deployment risk by simplifying the rollback process if a deployment fails. Once testing has been completed on the green environment, live application traffic is directed to the green environment and the blue environment is deprecated.
 
-	   
+## Blue/Green deployments with Elastic Beanstalk
+
+- Go to your running Environment of ElasticBeanstalk.
+- Click on **clone environment** 
+**![](https://lh6.googleusercontent.com/ewnwVJs77fLlSInhRu2NizxLWEfucaTtyzMkEDaBJsZ-br8Sov0fiD2D3Behjrx4xupY74Xl75WVTK1fPiEBTvvzenl2BGsIdyUB_oiHCJikuszpomFlN_zi_WWwNzn97R12ifQxr4zW4GvlMtGNlp8JoVyWLeWKcn3Wst9xq5sQKHKPXK6TVVEz-g)**
+- You can Change the Name of your new env (cloned env).
+- Click on **clone**.
+**![](https://lh3.googleusercontent.com/mpBhhAQonLjcGdaqMx4DVfKtJUsQ4ERRw6luWx2SHLtD-bFr_ZvTnRggnKWmmmcyCmFORBMr4miAm2kVIjAAVnSEoqWEZRxlj351hYATkAZZqYUnB-dRIktE0Hmxo2GC_Z7_Dp7mq3bbnJYqrYQrcMccxL-e0qrfP22FOMrS-YLP5V_J_5BSFUi0kA)**
+ **Imortant: Environment URL must be unique.**
+ If you see the following message. change the URL.
+ **![](https://lh4.googleusercontent.com/MCwLbHlHiJYxjWbO5IpWkbm81eyFb2qUYHpOwj6KLo-yGT5kUx1VZ3jgGEixHpLkl-4bCfzjzel89qXq1HYWXqfJkotmx-9B1HeDxTCl3Q-l8J6_wueRO6tRVJV6odEE_pBidIChDs2aw3K8RS64shZz_qbTyKKT7-HsUr1_3MwGUoFidSRLDk6v9g)**
+ The env will start cloning. you can check the Events. after it all done.
+ *(It'll take few minutes)*
+ meanwhile, follow me on Github [karanbawa48](https://github.com/karanbawa48)
+ **![](https://lh6.googleusercontent.com/UMtWBvTqwPK22dw-Ueljdk_EofXKfpqzPta6LCMVoqo5AvNa0jY2iyRupJHjnwtGpQCb-Y4bokwMZZa9oFhmBsb0spxGsDnpzoOJ5NNEd0NyYnK4tDpLGbGeuq2WWeQTaRMPFua61-SR94Qws-PvyZLzk-2tGcOuktY_SHFhvoEekY6RHFVE14KySA)**
+- The Env will be cloned, You can observe that the Env URL is different from the existing one. 
+- Now, upload your **latest code** by clicking on *upload and deploy*.
+
+**![](https://lh5.googleusercontent.com/BZoM_RKb63W-OJQyNC7SRNAe6xPqKvlCzsYqaJSh_0RRkPA4Ydrqz74y5lfGPBDk6Xkf-8ThaSWoIB2POGwe5AUDa3P7RdCbPWnx3VoM6BR_bBihD7eQknblm78IwJZXDhM4MKd76lOr4dvYgYBx-ezwMTQsELKQ0zrKgQDdXQtQYmkGB46AUAhvIQ)**
+Click on **Deploy**.
+**![](https://lh3.googleusercontent.com/VZUWPRAHDq_O42BdyJRYIcBtPoYvzxSdXdqEQkaDhqWTcx9Xl13VWMfRcKnEon4Dfc_iFJMQD2i2G5lvDkIpMvx8LGPUKGP7CYWSW0adKFGMW6ZL1LIJ1fL1ba7NxtQ00qEahwaSYRLmQ6bMTI5BkdFA_dwAlFnr2-sICGWHC3I81usmcfPBsxsZ6Q)**
+The New Application will start deploying.  if you source code is working. The Application will deployed.
+
+**![](https://lh6.googleusercontent.com/1a39vGbRy8jM1m5cTOsQS-L7cDbOpVRWBPqe4GMLXcGppnz4InyGZ-HxiOBRLbHVN1xfJo0-o4mU8vs0zhDmRTtAlaBFHvmh4McZfsEbEKAdmEcF4H7H-09rH5ZADMjPKNtTk2ihkmzrO40JpEjUW4TvV4OAX1rVQcH4urCmqHncm6G9TzXL9ktBag)**
+If the health new env is ok, It mean you have successfully deployed you new version of application. 
+Test the new version on the new environment. 
+**![](https://lh6.googleusercontent.com/_tGIhCEQdLT_GHNnhZH0eOhiTf_MjudUuUYkx8a9OWPZtHgQq70fxmosNrBcMuqUyYQ9-qGg2H6zaN9VLs4JTCbnt0KUJCdQt2uCHOyT1MOObBSTYKyTReEmLiRTRG6L3ws1q1qHuoi1B0DyoOdquQaeUPib_SiPzzvEO-14J_FolcrXpXlgtVLw8A)**
+Now, here comes the Blue/green deployments in the picture.
+- On the environment overview page, choose  **Environment actions**, and then choose  **Swap environment URLs**.
+**![](https://lh5.googleusercontent.com/R2VcddtCfG2E8mmF1O_q3X85MB4g0vmyEODTc1MGyPu-7xsm4QqdI2z3d4_mCc5XRMd4T3baa9eMJXJbIc8LjzEpSEUdr7toSsaCDYE7AH250cJFGvHmgpiZm7H9wTuquiqlf9cdvzO79xs7dbV-E_YvKNwgnnfzOC3JQpNqBWucUqvyzHSevrQCAQ)**
+- Click on **swap**
+**![](https://lh6.googleusercontent.com/i-PqJjyFZeED1pPcjJovCSc_VxWe6j4Gj-J5pFTSVvdx_faomvnsWnzkqZk2o3ZsxWCqg0hQZHki0s5PsweO7ltjO7ojNZ9jdqQZ7SOofHyGX2v59lnuS2ehQl3QFSTs3lOJUCnzknBlII-DXr5gYxbsJGbfeSAiKD1Qo9YtyY7ZCvqXGWrG76CeMw)**
+
+Elastic Beanstalk swaps the CNAME records of the old and new environments, redirecting traffic from the old version to the new version.
+
+After Elastic Beanstalk completes the swap operation, verify that the new environment responds when you try to connect to the old environment URL. However, do not terminate your old environment until the DNS changes are propagated and your old DNS records expire. DNS servers don't always clear old records from their cache based on the time to live (TTL) that you set on your DNS records.
+
+## All done!!
+
+*Note: Blue/green deployments require that your environment runs independently of your production database, if your application uses one. If your environment includes a database that Elastic Beanstalk created on your behalf, the database and connection of the environment isn't preserved unless you take specific actions. If you have a database that you want to retain, use one of the Elastic Beanstalk database lifecycle options. You can choose the Retain option to keep the database and environment operational after decoupling the database.*
